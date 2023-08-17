@@ -1,0 +1,19 @@
+body {
+  margin: 0px;
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+a {
+  text-decoration: nome;
+}
+.header-bg {
+background-color: #000000;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: ;
+}
