@@ -1,18 +1,41 @@
+/* Define estilo geral para o corpo do documento */
 body {
   margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
 }
-ul {
+
+/* Remove margens para cabeçalhos, listas e parágrafos */
+h1,
+ul,
+p {
   margin: 0px;
+}
+
+/* Remove padding e marcadores de lista para listas não ordenadas */
+ul {
   padding: 0px;
   list-style: none;
 }
+
+/* Define estilo para links: sem decoração e cor herdada */
 a {
-  text-decoration: nome;
+  text-decoration: none;
+  color: inherit;
 }
+
+/* Define estilo para imagens: largura máxima de 100% e exibição em bloco */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Define fundo e estilo para cabeçalho */
 .header-bg {
-background-color: #000000;
+  background-color: #000000;
 }
+
 .header {
+  /* Configurações de layout flexível para o cabeçalho */
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -24,59 +47,187 @@ background-color: #000000;
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Define estilo para o menu no cabeçalho */
 .header-menu {
+  /* Configurações de layout flexível para o menu */
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
 }
+
 .header-menu a {
+  /* Estilo para links do menu: cor, espaçamento e posição relativa */
   color: #ffffff;
   display: inline-block;
   padding: 16px 0px;
   font-size: 18px;
-  text-decoration: none;
   position: relative;
 }
 
-.header-menu a:after{
-   content: "";
-   display: block;
-   height: 2px;
-   width: 0%;
-   background: #ffffff;
-   margin-top: 4px;
-   transition: 0.3s ;
-   position: absolute;
-
+.header-menu a:after {
+  /* Efeito de linha abaixo dos links do menu ao passar o mouse */
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0px;
+  background: #ffffff;
+  margin-top: 4px;
+  transition: 0.3s;
+  position: absolute;
 }
+
 .header-menu a:hover:after {
+  /* Expande a linha ao passar o mouse sobre um link */
   width: 100%;
 }
-@media ( max-width:800px) {
+
+/* Estilos responsivos para telas até 800px de largura */
+@media (max-width: 800px) {
+
+  /* Ajusta espaçamento e estilo para links no menu */
   .header-menu {
     gap: 20px;
   }
+
   .header-menu a {
-    background: #1111111;
+    background: #111111;
     padding: 12px 16px;
     border-radius: 4px;
   }
+
   .header-menu a:hover {
     background-color: #2e2e2e;
   }
+
+  /* Oculta linha após links no cabeçalho */
   .header a:after {
     display: none;
   }
 }
 
-  @media ( max-width:600px) {
-    .header-menu {
-      gap: 12px;
-    }
-    .header-menu a {
-      padding: 8px 12px;
-      font-size: 14px;
+/* Estilos responsivos para telas até 600px de largura */
+@media (max-width: 600px) {
 
-    }
+  /* Ajusta espaçamento e tamanho de fonte para links no menu */
+  .header-menu {
+    gap: 12px;
   }
+
+  .header-menu a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Define fundo e estilo para seção de introdução */
+.introducao-bg {
+  background: #000000;
+  color: #ffffff;
+}
+
+.introducao {
+  /* Configurações de layout de grid para a seção de introdução */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 40px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Estilo para o conteúdo na seção de introdução */
+.introducao-conteudo {
+  align-self: end;
+  padding-bottom: 80px;
+}
+/* Estilo para o conteúdo na seção de introdução */
+.introducao-conteudo {
+  /* Alinha o conteúdo no final do contêiner e adiciona espaço inferior */
+  align-self: end;
+  padding-bottom: 80px;
+}
+
+/* Estilos para o título na seção de introdução */
+.introducao h1 {
+  /* Define margem inferior, tamanho de fonte e espaçamento de linha */
+  margin-bottom: 32px;
+  font-size: 64px;
+  line-height: 1.125;
+}
+
+/* Estilo para a parte destacada dentro do título */
+.introducao h1 span {
+  /* Define cor amarela para a parte destacada */
+  color: #ffbb00;
+}
+
+/* Estilos para parágrafos na seção de introdução */
+.introducao p {
+  /* Define margem inferior, tamanho de fonte e espaçamento de linha */
+  margin-bottom: 20px;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #b2b2b2;
+  /* Define cor do texto em cinza */
+}
+
+/* Estilos para links na seção de introdução */
+.introducao a {
+  /* Define estilo para links */
+  display: inline-block;
+  padding: 16px 32px;
+  background: linear-gradient(#ffbf00, #f2a50c);
+  /* Gradiente de fundo */
+  border-radius: 4px;
+  /* Borda arredondada */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
+  text-transform: uppercase;
+  /* Transforma o texto em maiúsculas */
+  color: #332200;
+  /* Cor do texto */
+  font-size: 18px;
+  line-height: 1.33;
+  font-weight: bold;
+  /* Texto em negrito */
+}
+
+/* Estilos para links na seção de introdução quando o mouse passa por cima */
+.introducao a:hover {
+  background: linear-gradient(#ffb60d, #e59317);
+  /* Gradiente de fundo alterado */
+}
+/* Estilo para o cabeçalho */
+.header {
+  /* Configuração de layout flexível: exibe elementos filhos em linha */
+  display: flex;
+
+  /* Permite que os elementos filhos sejam distribuídos em várias linhas */
+  flex-wrap: wrap;
+
+  /* Define o espaçamento entre os elementos filhos */
+  gap: 20px;
+
+  /* Alinha os elementos filhos horizontalmente com espaço entre eles */
+  justify-content: space-between;
+
+  /* Alinha os elementos filhos verticalmente ao centro */
+  align-items: center;
+
+  /* Define a caixa (box) do elemento incluindo padding e bordas, sem margens */
+  box-sizing: border-box;
+
+  /* Adiciona espaçamento interno ao elemento */
+  padding: 20px;
+
+  /* Limita a largura máxima do elemento */
+  max-width: 1200px;
+
+  /* Centraliza o elemento horizontalmente na página */
+  margin-left: auto;
+  margin-right: auto;
 }
